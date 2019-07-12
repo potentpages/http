@@ -7,7 +7,7 @@ Some use cases include:
 
 NOTE: This library will download all pages simultaneously. Please DO NOT overload a server by adding many URLs from the same domain all at once. That very easily could git your IP address blocked.
 
-#Overview
+# Overview
 The basic process for using this library is:
 1. Initialize the Http object.
 2. Add your download requests.
@@ -25,7 +25,7 @@ print_r($response);
 $httpObj = null;
 ```
 
-#HTTP Request Parameters
+# HTTP Request Parameters
 To make a general HTTP request, use the `add` function. The parameters to the `add` function are as follows:
 1. URL to be downloaded
 2. Referer string
@@ -50,7 +50,7 @@ To make a general HTTP request, use the `add` function. The parameters to the `a
     - Note that this allows the response to not be stored in memory so you can download large files.
 13. Additional HTTP headers to send in the request (in an array)
 
-#GET Request Parameters
+# GET Request Parameters
 To make a GET request, you can use the `add_get` function. It's a bit simplified with the following parameters:
 1. URL to be downloaded
 2. Referer string
@@ -67,7 +67,7 @@ To make a GET request, you can use the `add_get` function. It's a bit simplified
 
 Note, you can call as many add's or add_get's as you want in a single request.
 
-#Output
+# Output
 The output of the function is an array with the data and a range of parameters. Each request will be returned in the order they were added to the library.
 
 Here's an example output from the example code above:
@@ -158,13 +158,13 @@ accept-ranges: bytes
 )
 ```
 
-##Header Parsing
+## Header Parsing
 If the document is stored in memory, the header will be parsed. The raw header is stored in the "header" index, and the parsed header is stored in the "header_array" index.
 
-##Body
+## Body
 If the document is stored in memory, the body will be saved in the "body" index. If not, the result will be saved in the file that you specified.
 
-##Request
+## Request
 Your original request is stored in the "request" index.
 
 
