@@ -1,6 +1,9 @@
 {
-    "name": "potentpages/http-client",
+    "name": "potentpages/http",
+    "type": "library",
     "description": "Library for making HTTP requests",
+    "keywords": ["http", "php", "curl", "multi", "get", "post", "patch", "put", "delete", "options"],
+    "homepage": "https://potentpages.com/web-crawler-development",
     "require": {
     }
 }
