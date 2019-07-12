@@ -1,0 +1,6 @@
+{
+    "name": "potentpages/http-client",
+    "description": "Library for making HTTP requests",
+    "require": {
+    }
+}
