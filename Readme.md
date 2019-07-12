@@ -1,3 +1,4 @@
+# HTTP Requests Library
 This library allows you to make HTTP requests using libcurl in PHP. It's designed to use the cURL multi interface to optimize speed and increase download efficiency.
 
 Some use cases include:
