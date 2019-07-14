@@ -1,4 +1,6 @@
-cookies.txt
-test.html
+/.idea
+/.vagrant
 vendor/
-*.html
+composer.lock
+artifacts/
+phpunit.xml

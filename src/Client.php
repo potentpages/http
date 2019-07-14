@@ -1,5 +1,7 @@
-<?php 
-class Http {
+<?php
+namespace PotentHTTP;
+
+class Client {
     private $multiHandle;
     private $requests;
     
@@ -16,7 +18,7 @@ class Http {
         $this->clear();
     }
     
-    public function __descruct() {
+    public function __destruct() {
         curl_multi_close ( $this->multiHandle );
     }
     
@@ -128,7 +130,7 @@ class Http {
             
             $parsed = null;
             if($request['fileOut'] != null) {
-                $filesize = filesize(getcwd(). '/'. $request['fileOut']);
+                $filesize = filesize($request['fileOut']);
                 //echo $request['fileOut']. ' '. $filesize. "\n";
                 if($filesize > 0) {
                     $data[$index]['success'] = true;
@@ -138,7 +140,7 @@ class Http {
                     $data[$index]['message'] = "Blank File";
                 }
                 
-                $data[$index]['file'] = getcwd(). '/'. $request['fileOut'];
+                $data[$index]['file'] = $request['fileOut'];
                 $data[$index]['header'] = null;
                 $data[$index]['header_array'] = null;
                 $data[$index]['body'] = null;
@@ -207,8 +209,8 @@ class Http {
         }
         
         //If Cookies file and need to clear cookies, clear them
-        if($cookiesFile != null && $clearCookies == true && file_exists(getcwd(). '/'. $cookiesFile)) {
-            unlink(getcwd(). '/'. $cookiesFile);
+        if($cookiesFile != null && $clearCookies == true && file_exists($cookiesFile)) {
+            unlink($cookiesFile);
         }
         
         //Primary settings
@@ -224,7 +226,7 @@ class Http {
         //If save to file
         $dataArray['out'] = null;
         if($fileOut != null) {
-            $dataArray['out'] = fopen(getcwd(). '/'. $fileOut, "w+");
+            $dataArray['out'] = fopen($fileOut, "w+");
             if ($dataArray['out'] == false){ 
                 return null;
             }

@@ -1,9 +1,31 @@
 {
-    "name": "potentpages/http",
-    "type": "library",
-    "description": "Library for making HTTP requests",
-    "keywords": ["http", "php", "curl", "multi", "get", "post", "patch", "put", "delete", "options"],
-    "homepage": "https://potentpages.com/web-crawler-development",
-    "require": {
+  "name": "potentpages/http",
+  "type": "library",
+  "description": "Simple async library for making HTTP requests",
+  "keywords": [
+    "http requests",
+    "curl",
+    "multi",
+    "rest",
+    "client",
+    "http"
+  ],
+  "homepage": "https://potentpages.com",
+  "autoload": {
+    "psr-4": {
+      "PotentHTTP\\": "src/"
     }
+  },
+  "require": {
+    "php": ">=7.1",
+    "ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PotentHTTP\\Tests\\": "tests/"
+    }
+  }
 }
